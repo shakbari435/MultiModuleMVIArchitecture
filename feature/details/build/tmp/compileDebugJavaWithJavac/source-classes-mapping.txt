@@ -1,0 +1,2 @@
+com/shakbari/details/BuildConfig.java
+ com.shakbari.details.BuildConfig

@@ -1,0 +1,10 @@
+com/shakbari/core/di/RetrofitModule_ProvideRetrofitFactory.java
+ com.shakbari.core.di.RetrofitModule_ProvideRetrofitFactory
+hilt_aggregated_deps/_com_shakbari_core_di_RetrofitModule.java
+ hilt_aggregated_deps._com_shakbari_core_di_RetrofitModule
+com/shakbari/core/di/RetrofitModule_ProvideUtilsFactory.java
+ com.shakbari.core.di.RetrofitModule_ProvideUtilsFactory
+com/shakbari/core/BuildConfig.java
+ com.shakbari.core.BuildConfig
+com/shakbari/core/di/RetrofitModule_ProvideOkHttpClientFactory.java
+ com.shakbari.core.di.RetrofitModule_ProvideOkHttpClientFactory

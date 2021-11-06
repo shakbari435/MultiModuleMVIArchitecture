@@ -1,0 +1,2 @@
+com/shakbari/navigation/BuildConfig.java
+ com.shakbari.navigation.BuildConfig
