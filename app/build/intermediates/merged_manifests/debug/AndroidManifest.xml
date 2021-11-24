@@ -24,7 +24,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.ComposeBase" >
         <activity
-            android:name="com.shakbari.compose.MainActivity"
+            android:name="com.shakbari.compose.MainActivityWithNavigationFragment"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ComposeBase.NoActionBar" >

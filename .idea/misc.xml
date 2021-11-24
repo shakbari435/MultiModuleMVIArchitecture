@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Android/Compose/WorkSpace/ComposeBase/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22870370370370371" />
         <entry key="..\:/Android/Compose/WorkSpace/ComposeBase/feature/home/src/main/res/drawable/ic_android_black_24dp.xml" value="0.22870370370370371" />
+        <entry key="..\:/Android/Compose/WorkSpace/MultiModule/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Compose/WorkSpace/MultiModule/app/src/main/res/layout/fragment_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Compose/WorkSpace/MultiModule/feature/home/src/main/res/drawable/ic_android_black_24dp.xml" value="0.2898148148148148" />
       </map>
     </option>
   </component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home_navigation"
+    android:id="@+id/main_nav_graph"
+    tools:ignore="InvalidNavigation">
+
+
+    <include app:graph="@navigation/home_navigation" />
+
+    <include app:graph="@navigation/details_navigation" />
+
+    <action
+        android:id="@+id/action_global_home"
+        app:destination="@id/home_navigation"
+        app:popUpTo="@id/main_nav_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+
+    <action
+        android:id="@+id/action_global_details"
+        app:destination="@id/details_navigation"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" >
+
+        <argument
+            android:name="msg"
+            app:argType="string" />
+    </action>
+</navigation>

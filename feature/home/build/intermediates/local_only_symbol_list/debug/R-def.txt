@@ -1,3 +1,5 @@
 R_DEF: Internal format may change without notice
 local
 drawable ic_android_black_24dp
+id homeFragment
+navigation home_navigation

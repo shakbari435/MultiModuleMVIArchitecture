@@ -1,2 +1,6 @@
+com/shakbari/navigation/MainNavGraphDirections.java
+ com.shakbari.navigation.MainNavGraphDirections
+ com.shakbari.navigation.MainNavGraphDirections$1
+ com.shakbari.navigation.MainNavGraphDirections$ActionGlobalDetails
 com/shakbari/navigation/BuildConfig.java
  com.shakbari.navigation.BuildConfig

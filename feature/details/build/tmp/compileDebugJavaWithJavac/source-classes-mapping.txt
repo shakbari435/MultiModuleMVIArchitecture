@@ -1,2 +1,6 @@
 com/shakbari/details/BuildConfig.java
  com.shakbari.details.BuildConfig
+com/shakbari/details/fragment/DetailsFragmentArgs.java
+ com.shakbari.details.fragment.DetailsFragmentArgs
+ com.shakbari.details.fragment.DetailsFragmentArgs$1
+ com.shakbari.details.fragment.DetailsFragmentArgs$Builder

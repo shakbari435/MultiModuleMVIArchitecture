@@ -36,6 +36,10 @@ int anim fragment_open_exit 0x0
 int anim mtrl_bottom_sheet_slide_in 0x0
 int anim mtrl_bottom_sheet_slide_out 0x0
 int anim mtrl_card_lowers_interpolator 0x0
+int anim nav_default_enter_anim 0x0
+int anim nav_default_exit_anim 0x0
+int anim nav_default_pop_enter_anim 0x0
+int anim nav_default_pop_exit_anim 0x0
 int animator design_appbar_state_list_animator 0x0
 int animator design_fab_hide_motion_spec 0x0
 int animator design_fab_show_motion_spec 0x0
@@ -62,6 +66,10 @@ int animator mtrl_fab_hide_motion_spec 0x0
 int animator mtrl_fab_show_motion_spec 0x0
 int animator mtrl_fab_transformation_sheet_collapse_spec 0x0
 int animator mtrl_fab_transformation_sheet_expand_spec 0x0
+int animator nav_default_enter_anim 0x0
+int animator nav_default_exit_anim 0x0
+int animator nav_default_pop_enter_anim 0x0
+int animator nav_default_pop_exit_anim 0x0
 int attr action 0x0
 int attr actionBarDivider 0x0
 int attr actionBarItemBackground 0x0
@@ -327,6 +335,7 @@ int attr daySelectedStyle 0x0
 int attr dayStyle 0x0
 int attr dayTodayStyle 0x0
 int attr defaultDuration 0x0
+int attr defaultNavHost 0x0
 int attr defaultQueryHint 0x0
 int attr defaultState 0x0
 int attr deltaPolarAngle 0x0
@@ -355,6 +364,7 @@ int attr drawableTint 0x0
 int attr drawableTintMode 0x0
 int attr drawableTopCompat 0x0
 int attr drawerArrowStyle 0x0
+int attr drawerLayoutStyle 0x0
 int attr dropDownListViewStyle 0x0
 int attr dropdownListPreferredItemHeight 0x0
 int attr duration 0x0
@@ -1006,6 +1016,7 @@ int color abc_decor_view_status_guard 0x0
 int color abc_decor_view_status_guard_light 0x0
 int color abc_hint_foreground_material_dark 0x0
 int color abc_hint_foreground_material_light 0x0
+int color abc_input_method_navigation_guard 0x0
 int color abc_primary_text_disable_only_material_dark 0x0
 int color abc_primary_text_disable_only_material_light 0x0
 int color abc_primary_text_material_dark 0x0
@@ -1081,6 +1092,7 @@ int color design_fab_stroke_top_inner_color 0x0
 int color design_fab_stroke_top_outer_color 0x0
 int color design_icon_tint 0x0
 int color design_snackbar_background_color 0x0
+int color design_tint_password_toggle 0x0
 int color dim_foreground_disabled_material_dark 0x0
 int color dim_foreground_disabled_material_light 0x0
 int color dim_foreground_material_dark 0x0
@@ -1125,6 +1137,9 @@ int color material_timepicker_button_stroke 0x0
 int color material_timepicker_clock_text_color 0x0
 int color material_timepicker_clockface 0x0
 int color material_timepicker_modebutton_tint 0x0
+int color mtrl_bottom_nav_colored_item_tint 0x0
+int color mtrl_bottom_nav_item_tint 0x0
+int color mtrl_btn_bg_color_disabled 0x0
 int color mtrl_btn_bg_color_selector 0x0
 int color mtrl_btn_ripple_color 0x0
 int color mtrl_btn_stroke_color_selector 0x0
@@ -1139,6 +1154,7 @@ int color mtrl_card_view_foreground 0x0
 int color mtrl_card_view_ripple 0x0
 int color mtrl_chip_background_color 0x0
 int color mtrl_chip_close_icon_tint 0x0
+int color mtrl_chip_ripple_color 0x0
 int color mtrl_chip_surface_color 0x0
 int color mtrl_chip_text_color 0x0
 int color mtrl_choice_chip_background_color 0x0
@@ -1297,6 +1313,7 @@ int dimen compat_button_padding_vertical_material 0x0
 int dimen compat_control_corner_material 0x0
 int dimen compat_notification_large_icon_max_height 0x0
 int dimen compat_notification_large_icon_max_width 0x0
+int dimen def_drawer_elevation 0x0
 int dimen default_dimension 0x0
 int dimen design_appbar_elevation 0x0
 int dimen design_bottom_navigation_active_item_max_width 0x0
@@ -1574,9 +1591,11 @@ int dimen mtrl_snackbar_margin 0x0
 int dimen mtrl_snackbar_message_margin_horizontal 0x0
 int dimen mtrl_snackbar_padding_horizontal 0x0
 int dimen mtrl_switch_thumb_elevation 0x0
+int dimen mtrl_textinput_box_bottom_offset 0x0
 int dimen mtrl_textinput_box_corner_radius_medium 0x0
 int dimen mtrl_textinput_box_corner_radius_small 0x0
 int dimen mtrl_textinput_box_label_cutout_padding 0x0
+int dimen mtrl_textinput_box_padding_end 0x0
 int dimen mtrl_textinput_box_stroke_width_default 0x0
 int dimen mtrl_textinput_box_stroke_width_focused 0x0
 int dimen mtrl_textinput_counter_margin_start 0x0
@@ -1726,6 +1745,7 @@ int drawable btn_radio_off_mtrl 0x0
 int drawable btn_radio_off_to_on_mtrl_animation 0x0
 int drawable btn_radio_on_mtrl 0x0
 int drawable btn_radio_on_to_off_mtrl_animation 0x0
+int drawable design_bottom_navigation_item_background 0x0
 int drawable design_fab_background 0x0
 int drawable design_ic_visibility 0x0
 int drawable design_ic_visibility_off 0x0
@@ -1757,6 +1777,7 @@ int drawable mtrl_ic_error 0x0
 int drawable mtrl_navigation_bar_item_background 0x0
 int drawable mtrl_popupmenu_background 0x0
 int drawable mtrl_popupmenu_background_dark 0x0
+int drawable mtrl_snackbar_background 0x0
 int drawable mtrl_tabs_default_indicator 0x0
 int drawable navigation_empty_icon 0x0
 int drawable notification_action_background 0x0
@@ -1826,6 +1847,8 @@ int id action_bar_title 0x0
 int id action_container 0x0
 int id action_context_bar 0x0
 int id action_divider 0x0
+int id action_global_details 0x0
+int id action_global_home 0x0
 int id action_image 0x0
 int id action_menu_divider 0x0
 int id action_menu_presenter 0x0
@@ -1892,6 +1915,7 @@ int id design_menu_item_action_area 0x0
 int id design_menu_item_action_area_stub 0x0
 int id design_menu_item_text 0x0
 int id design_navigation_view 0x0
+int id details_navigation 0x0
 int id dialog_button 0x0
 int id disjoint 0x0
 int id dragDown 0x0
@@ -1927,6 +1951,8 @@ int id guideline 0x0
 int id header_title 0x0
 int id hide_in_inspector_tag 0x0
 int id home 0x0
+int id homeFragment 0x0
+int id home_navigation 0x0
 int id honorRequest 0x0
 int id icon 0x0
 int id icon_group 0x0
@@ -1946,6 +1972,7 @@ int id item_touch_helper_previous_elevation 0x0
 int id jumpToEnd 0x0
 int id jumpToStart 0x0
 int id labeled 0x0
+int id largeLabel 0x0
 int id layout 0x0
 int id left 0x0
 int id leftToRight 0x0
@@ -1954,6 +1981,7 @@ int id line3 0x0
 int id linear 0x0
 int id listMode 0x0
 int id list_item 0x0
+int id main_nav_graph 0x0
 int id masked 0x0
 int id material_clock_display 0x0
 int id material_clock_face 0x0
@@ -2009,6 +2037,7 @@ int id mtrl_picker_title_text 0x0
 int id mtrl_view_tag_bottom_padding 0x0
 int id multiply 0x0
 int id nav_controller_view_tag 0x0
+int id nav_host_fragment_container 0x0
 int id navigation_bar_item_icon_view 0x0
 int id navigation_bar_item_labels_group 0x0
 int id navigation_bar_item_large_label_view 0x0
@@ -2047,8 +2076,10 @@ int id right_icon 0x0
 int id right_side 0x0
 int id rounded 0x0
 int id row_index_key 0x0
+int id save_image_matrix 0x0
 int id save_non_transition_alpha 0x0
 int id save_overlay_view 0x0
+int id save_scale_type 0x0
 int id sawtooth 0x0
 int id scale 0x0
 int id screen 0x0
@@ -2072,6 +2103,7 @@ int id selection_type 0x0
 int id shortcut 0x0
 int id sin 0x0
 int id slide 0x0
+int id smallLabel 0x0
 int id snackbar_action 0x0
 int id snackbar_text 0x0
 int id spacer 0x0
@@ -2119,6 +2151,7 @@ int id textSpacerNoButtons 0x0
 int id textSpacerNoTitle 0x0
 int id text_input_end_icon 0x0
 int id text_input_error_icon 0x0
+int id text_input_password_toggle 0x0
 int id text_input_start_icon 0x0
 int id textinput_counter 0x0
 int id textinput_error 0x0
@@ -2159,6 +2192,7 @@ int integer abc_config_activityShortDur 0x0
 int integer app_bar_elevation_anim_duration 0x0
 int integer bottom_sheet_slide_duration 0x0
 int integer cancel_button_image_alpha 0x0
+int integer config_navAnimTime 0x0
 int integer config_tooltipAnimTime 0x0
 int integer design_snackbar_text_max_lines 0x0
 int integer design_tab_indicator_anim_duration_ms 0x0
@@ -2236,6 +2270,7 @@ int layout design_navigation_item_subheader 0x0
 int layout design_navigation_menu 0x0
 int layout design_navigation_menu_item 0x0
 int layout design_text_input_end_icon 0x0
+int layout design_text_input_password_icon 0x0
 int layout design_text_input_start_icon 0x0
 int layout material_chip_input_combo 0x0
 int layout material_clock_display 0x0
@@ -2307,6 +2342,9 @@ int layout text_view_with_theme_line_height 0x0
 int layout text_view_without_line_height 0x0
 int menu example_menu 0x0
 int menu example_menu2 0x0
+int navigation details_navigation 0x0
+int navigation home_navigation 0x0
+int navigation main_nav_graph 0x0
 int plurals mtrl_badge_content_description 0x0
 int string abc_action_bar_home_description 0x0
 int string abc_action_bar_up_description 0x0
@@ -2316,6 +2354,18 @@ int string abc_activity_chooser_view_see_all 0x0
 int string abc_activitychooserview_choose_application 0x0
 int string abc_capital_off 0x0
 int string abc_capital_on 0x0
+int string abc_font_family_body_1_material 0x0
+int string abc_font_family_body_2_material 0x0
+int string abc_font_family_button_material 0x0
+int string abc_font_family_caption_material 0x0
+int string abc_font_family_display_1_material 0x0
+int string abc_font_family_display_2_material 0x0
+int string abc_font_family_display_3_material 0x0
+int string abc_font_family_display_4_material 0x0
+int string abc_font_family_headline_material 0x0
+int string abc_font_family_menu_material 0x0
+int string abc_font_family_subhead_material 0x0
+int string abc_font_family_title_material 0x0
 int string abc_menu_alt_shortcut_label 0x0
 int string abc_menu_ctrl_shortcut_label 0x0
 int string abc_menu_delete_shortcut_label 0x0
@@ -2410,6 +2460,8 @@ int string mtrl_picker_toggle_to_calendar_input_mode 0x0
 int string mtrl_picker_toggle_to_day_selection 0x0
 int string mtrl_picker_toggle_to_text_input_mode 0x0
 int string mtrl_picker_toggle_to_year_selection 0x0
+int string nav_app_bar_navigate_up_description 0x0
+int string nav_app_bar_open_drawer_description 0x0
 int string navigation_menu 0x0
 int string not_selected 0x0
 int string off 0x0
@@ -2809,6 +2861,7 @@ int style TextAppearance_MaterialComponents_Headline6 0x0
 int style TextAppearance_MaterialComponents_Overline 0x0
 int style TextAppearance_MaterialComponents_Subtitle1 0x0
 int style TextAppearance_MaterialComponents_Subtitle2 0x0
+int style TextAppearance_MaterialComponents_Tab 0x0
 int style TextAppearance_MaterialComponents_TimePicker_Title 0x0
 int style TextAppearance_MaterialComponents_Tooltip 0x0
 int style TextAppearance_Widget_AppCompat_ExpandedMenu_Item 0x0
@@ -3436,8 +3489,17 @@ int styleable BottomAppBar_hideOnScroll 7
 int styleable BottomAppBar_paddingBottomSystemWindowInsets 8
 int styleable BottomAppBar_paddingLeftSystemWindowInsets 9
 int styleable BottomAppBar_paddingRightSystemWindowInsets 10
-int[] styleable BottomNavigationView { 0x0 }
-int styleable BottomNavigationView_itemHorizontalTranslationEnabled 0
+int[] styleable BottomNavigationView { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int styleable BottomNavigationView_elevation 0
+int styleable BottomNavigationView_itemBackground 1
+int styleable BottomNavigationView_itemHorizontalTranslationEnabled 2
+int styleable BottomNavigationView_itemIconSize 3
+int styleable BottomNavigationView_itemIconTint 4
+int styleable BottomNavigationView_itemTextAppearanceActive 5
+int styleable BottomNavigationView_itemTextAppearanceInactive 6
+int styleable BottomNavigationView_itemTextColor 7
+int styleable BottomNavigationView_labelVisibilityMode 8
+int styleable BottomNavigationView_menu 9
 int[] styleable BottomSheetBehavior_Layout { 0x1010440, 0x101011f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable BottomSheetBehavior_Layout_android_elevation 0
 int styleable BottomSheetBehavior_Layout_android_maxWidth 1
@@ -3910,6 +3972,11 @@ int styleable CustomAttribute_customFloatValue 5
 int styleable CustomAttribute_customIntegerValue 6
 int styleable CustomAttribute_customPixelDimension 7
 int styleable CustomAttribute_customStringValue 8
+int[] styleable DesignTheme { 0x0, 0x0 }
+int styleable DesignTheme_bottomSheetDialogTheme 0
+int styleable DesignTheme_bottomSheetStyle 1
+int[] styleable DialogFragmentNavigator { 0x1010003 }
+int styleable DialogFragmentNavigator_android_name 0
 int[] styleable DrawerArrowToggle { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable DrawerArrowToggle_arrowHeadLength 0
 int styleable DrawerArrowToggle_arrowShaftLength 1
@@ -3919,6 +3986,8 @@ int styleable DrawerArrowToggle_drawableSize 4
 int styleable DrawerArrowToggle_gapBetweenBars 5
 int styleable DrawerArrowToggle_spinBars 6
 int styleable DrawerArrowToggle_thickness 7
+int[] styleable DrawerLayout { 0x0 }
+int styleable DrawerLayout_elevation 0
 int[] styleable ExtendedFloatingActionButton { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable ExtendedFloatingActionButton_collapsedSize 0
 int styleable ExtendedFloatingActionButton_elevation 1
@@ -3982,6 +4051,8 @@ int styleable Fragment_android_tag 2
 int[] styleable FragmentContainerView { 0x1010003, 0x10100d1 }
 int styleable FragmentContainerView_android_name 0
 int styleable FragmentContainerView_android_tag 1
+int[] styleable FragmentNavigator { 0x1010003 }
+int styleable FragmentNavigator_android_name 0
 int[] styleable GradientColor { 0x101020b, 0x10101a2, 0x10101a3, 0x101019e, 0x1010512, 0x1010513, 0x10101a4, 0x101019d, 0x1010510, 0x1010511, 0x1010201, 0x10101a1 }
 int styleable GradientColor_android_centerColor 0
 int styleable GradientColor_android_centerX 1
@@ -4264,6 +4335,39 @@ int styleable MaterialCardView_strokeWidth 11
 int[] styleable MaterialCheckBox { 0x0, 0x0 }
 int styleable MaterialCheckBox_buttonTint 0
 int styleable MaterialCheckBox_useMaterialThemeColors 1
+int[] styleable MaterialComponentsTheme { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+int styleable MaterialComponentsTheme_bottomSheetDialogTheme 0
+int styleable MaterialComponentsTheme_bottomSheetStyle 1
+int styleable MaterialComponentsTheme_chipGroupStyle 2
+int styleable MaterialComponentsTheme_chipStandaloneStyle 3
+int styleable MaterialComponentsTheme_chipStyle 4
+int styleable MaterialComponentsTheme_colorAccent 5
+int styleable MaterialComponentsTheme_colorBackgroundFloating 6
+int styleable MaterialComponentsTheme_colorPrimary 7
+int styleable MaterialComponentsTheme_colorPrimaryDark 8
+int styleable MaterialComponentsTheme_colorSecondary 9
+int styleable MaterialComponentsTheme_editTextStyle 10
+int styleable MaterialComponentsTheme_floatingActionButtonStyle 11
+int styleable MaterialComponentsTheme_materialButtonStyle 12
+int styleable MaterialComponentsTheme_materialCardViewStyle 13
+int styleable MaterialComponentsTheme_navigationViewStyle 14
+int styleable MaterialComponentsTheme_scrimBackground 15
+int styleable MaterialComponentsTheme_snackbarButtonStyle 16
+int styleable MaterialComponentsTheme_tabStyle 17
+int styleable MaterialComponentsTheme_textAppearanceBody1 18
+int styleable MaterialComponentsTheme_textAppearanceBody2 19
+int styleable MaterialComponentsTheme_textAppearanceButton 20
+int styleable MaterialComponentsTheme_textAppearanceCaption 21
+int styleable MaterialComponentsTheme_textAppearanceHeadline1 22
+int styleable MaterialComponentsTheme_textAppearanceHeadline2 23
+int styleable MaterialComponentsTheme_textAppearanceHeadline3 24
+int styleable MaterialComponentsTheme_textAppearanceHeadline4 25
+int styleable MaterialComponentsTheme_textAppearanceHeadline5 26
+int styleable MaterialComponentsTheme_textAppearanceHeadline6 27
+int styleable MaterialComponentsTheme_textAppearanceOverline 28
+int styleable MaterialComponentsTheme_textAppearanceSubtitle1 29
+int styleable MaterialComponentsTheme_textAppearanceSubtitle2 30
+int styleable MaterialComponentsTheme_textInputStyle 31
 int[] styleable MaterialRadioButton { 0x0, 0x0 }
 int styleable MaterialRadioButton_buttonTint 0
 int styleable MaterialRadioButton_useMaterialThemeColors 1
@@ -4383,6 +4487,8 @@ int[] styleable NavGraphNavigator { 0x0 }
 int styleable NavGraphNavigator_startDestination 0
 int[] styleable NavHost { 0x0 }
 int styleable NavHost_navGraph 0
+int[] styleable NavHostFragment { 0x0 }
+int styleable NavHostFragment_defaultNavHost 0
 int[] styleable NavInclude { 0x0 }
 int styleable NavInclude_graph 0
 int[] styleable NavigationBarView { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }

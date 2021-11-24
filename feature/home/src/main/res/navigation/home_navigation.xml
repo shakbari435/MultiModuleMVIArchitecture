@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/home_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.shakbari.home.fragment.HomeFragment">
+<!--        <action
+            android:id="@+id/action_homeFragment_to_nextFragment"
+            app:destination="@id/nextFragment" />-->
+    </fragment>
+
+<!--    <fragment
+        android:id="@+id/nextFragment"
+        android:name="bg.dihanov.home.NextFragment" >
+
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="example://next" />
+    </fragment>-->
+
+</navigation>

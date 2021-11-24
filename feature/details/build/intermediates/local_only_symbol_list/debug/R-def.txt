@@ -1,2 +1,5 @@
 R_DEF: Internal format may change without notice
 local
+id deepLink
+id detailsFragment
+navigation details_navigation

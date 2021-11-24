@@ -1,2 +1,10 @@
 R_DEF: Internal format may change without notice
 local
+id action_global_details
+id action_global_home
+id details_navigation
+id home_navigation
+id main_nav_graph
+navigation details_navigation
+navigation home_navigation
+navigation main_nav_graph

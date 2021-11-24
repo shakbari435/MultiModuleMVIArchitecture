@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
-6-->F:\Multi Module Clean Architecture With Jetpack Compose\feature\details\src\main\AndroidManifest.xml
+6-->E:\Android\Compose\WorkSpace\MultiModule\feature\details\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="31" />
-7-->F:\Multi Module Clean Architecture With Jetpack Compose\feature\details\src\main\AndroidManifest.xml
+7-->E:\Android\Compose\WorkSpace\MultiModule\feature\details\src\main\AndroidManifest.xml
 8
 9</manifest>

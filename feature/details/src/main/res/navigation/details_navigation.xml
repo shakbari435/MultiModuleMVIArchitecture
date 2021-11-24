@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/details_navigation"
+    app:startDestination="@id/detailsFragment">
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.shakbari.details.fragment.DetailsFragment">
+
+        <argument
+            android:defaultValue=""
+            android:name="msg"
+            app:argType="string" />
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="example://dashboard/exampleArgs?msg={msg}" />
+    </fragment>
+</navigation>

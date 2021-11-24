@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Multi Module Clean Architecture With Jetpack Compose\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+            "outputFile": "E:\\Android\\Compose\\WorkSpace\\MultiModule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Amin Basalam\\.gradle\\caches\\transforms-3\\e80fd203c667bdfc2f07d1e0c34c6693\\transformed\\material-1.4.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+                    "source": "C:\\Users\\Amin Basalam\\.gradle\\caches\\transforms-3\\0b78ca64cdadc6614ce7f09e6158af90\\transformed\\material-1.4.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

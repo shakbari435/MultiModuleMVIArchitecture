@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "name": "details_navigation",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "example"
+        ],
+        "host": "dashboard",
+        "port": -1,
+        "path": "/exampleArgs",
+        "query": "msg\u003d.*",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "E:\\Android\\Compose\\WorkSpace\\MultiModule\\feature\\details\\src\\main\\res\\navigation\\details_navigation.xml",
+            "mDescription": "details_navigation"
+          },
+          "mSourcePosition": {
+            "mStartLine": 15,
+            "mStartColumn": 8,
+            "mStartOffset": 527,
+            "mEndLine": 17,
+            "mEndColumn": 66,
+            "mEndOffset": 644
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

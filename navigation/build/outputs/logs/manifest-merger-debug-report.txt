@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml:2:1-5:12
+ADDED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml:3:5-38
-		INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-		INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
+		ADDED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml:3:5-38
+		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml:2:11-69
+		ADDED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-		ADDED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-		INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+		ADDED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-		ADDED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
-		INJECTED from F:\Multi Module Clean Architecture With Jetpack Compose\navigation\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+		ADDED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\navigation\src\main\AndroidManifest.xml
