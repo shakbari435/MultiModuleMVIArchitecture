@@ -22,6 +22,7 @@ import com.shakbari.home.common.di.HomeFeatureModule_ProvideUserRepositoryFactor
 import com.shakbari.home.domain.repository.UserRepository;
 import com.shakbari.home.domain.repository.UserRepositoryImpl;
 import com.shakbari.home.domain.usecase.UserUseCase;
+import com.shakbari.home.presentation.fragment.HomeFragment;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules_KeyModule_ProvideFactory;
 import dagger.hilt.android.ActivityRetainedLifecycle;
@@ -415,6 +416,10 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
     }
 
     @Override
+    public void injectHomeFragment(HomeFragment arg0) {
+    }
+
+    @Override
     public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
       return activityCImpl.getHiltInternalFactoryFactory();
     }
@@ -457,6 +462,10 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
       this.activityRetainedCImpl = activityRetainedCImpl;
 
 
+    }
+
+    @Override
+    public void injectMainActivityWithNavigationFragment(MainActivityWithNavigationFragment arg0) {
     }
 
     @Override

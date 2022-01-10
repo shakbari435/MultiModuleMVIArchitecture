@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import com.shakbari.core.base.ViewState
@@ -26,7 +27,7 @@ import com.shakbari.navigation.Screen
 @Composable
 internal fun HomeScreen(
     navController: NavController,
-    usersViewModel: UsersViewModel
+    usersViewModel: UsersViewModel = hiltViewModel()
 ) {
     usersViewModel
         .getUsers()

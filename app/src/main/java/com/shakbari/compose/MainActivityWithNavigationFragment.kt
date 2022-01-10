@@ -6,7 +6,9 @@ import androidx.navigation.findNavController
 import com.shakbari.navigation.fragmentnavigation.BaseNavigation
 import com.shakbari.navigation.fragmentnavigation.NavFragment
 import com.shakbari.navigation.fragmentnavigation.NavigatorFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivityWithNavigationFragment : AppCompatActivity(), BaseNavigation {
     private val navControllers by lazy {
         findNavController(R.id.nav_host_fragment)

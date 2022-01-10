@@ -20,9 +20,11 @@ import dagger.hilt.processor.internal.definecomponent.codegen._dagger_hilt_compo
 import hilt_aggregated_deps._androidx_hilt_lifecycle_ViewModelFactoryModules_ActivityModuleModuleDeps;
 import hilt_aggregated_deps._androidx_hilt_lifecycle_ViewModelFactoryModules_FragmentModuleModuleDeps;
 import hilt_aggregated_deps._com_shakbari_compose_App_GeneratedInjector;
+import hilt_aggregated_deps._com_shakbari_compose_MainActivityWithNavigationFragment_GeneratedInjector;
 import hilt_aggregated_deps._com_shakbari_compose_MainActivity_GeneratedInjector;
 import hilt_aggregated_deps._com_shakbari_core_di_RetrofitModule;
 import hilt_aggregated_deps._com_shakbari_home_common_di_HomeFeatureModule;
+import hilt_aggregated_deps._com_shakbari_home_presentation_fragment_HomeFragment_GeneratedInjector;
 import hilt_aggregated_deps._com_shakbari_home_presentation_viewmodel_UsersViewModel_HiltModules_BindsModule;
 import hilt_aggregated_deps._com_shakbari_home_presentation_viewmodel_UsersViewModel_HiltModules_KeyModule;
 import hilt_aggregated_deps._dagger_hilt_android_flags_FragmentGetContextFix_FragmentGetContextFixEntryPoint;
@@ -66,6 +68,7 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
     aggregatedDeps = {
         _com_shakbari_home_presentation_viewmodel_UsersViewModel_HiltModules_KeyModule.class,
         _com_shakbari_home_presentation_viewmodel_UsersViewModel_HiltModules_BindsModule.class,
+        _com_shakbari_home_presentation_fragment_HomeFragment_GeneratedInjector.class,
         _com_shakbari_home_common_di_HomeFeatureModule.class,
         _com_shakbari_core_di_RetrofitModule.class,
         _androidx_hilt_lifecycle_ViewModelFactoryModules_FragmentModuleModuleDeps.class,
@@ -90,6 +93,7 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _dagger_hilt_android_internal_modules_HiltWrapper_ActivityModule.class,
         hilt_aggregated_deps._com_shakbari_compose_App.class,
         _com_shakbari_compose_App_GeneratedInjector.class,
+        _com_shakbari_compose_MainActivityWithNavigationFragment_GeneratedInjector.class,
         _com_shakbari_compose_MainActivity_GeneratedInjector.class
     }
 )

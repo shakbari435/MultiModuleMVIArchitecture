@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.shakbari.home.fragment.HomeFragment">
+        android:name="com.shakbari.home.presentation.fragment.HomeFragment">
 <!--        <action
             android:id="@+id/action_homeFragment_to_nextFragment"
             app:destination="@id/nextFragment" />-->

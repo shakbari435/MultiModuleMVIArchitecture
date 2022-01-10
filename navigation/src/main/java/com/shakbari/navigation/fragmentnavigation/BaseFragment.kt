@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 open class BaseFragment : Fragment() {
+    lateinit var baseNavigation:BaseNavigation
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        baseNavigation = (requireActivity() as BaseNavigation)
     }
 
     fun pushFragment(navFragment: NavFragment) {

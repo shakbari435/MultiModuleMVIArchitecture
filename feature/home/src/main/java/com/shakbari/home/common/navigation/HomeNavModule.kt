@@ -13,7 +13,6 @@ val homeScreenNavModule = NavComposableModule { navHost, navController ->
         ) {
             HomeScreen(
                 navController = navController,
-                usersViewModel = hiltViewModel()
             )
         }
 

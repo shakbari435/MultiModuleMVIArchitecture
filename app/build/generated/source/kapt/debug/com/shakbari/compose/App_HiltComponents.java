@@ -3,6 +3,7 @@ package com.shakbari.compose;
 import androidx.hilt.lifecycle.ViewModelFactoryModules;
 import com.shakbari.core.di.RetrofitModule;
 import com.shakbari.home.common.di.HomeFeatureModule;
+import com.shakbari.home.presentation.fragment.HomeFragment_GeneratedInjector;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
@@ -173,7 +174,8 @@ public final class App_HiltComponents {
       }
   )
   @ActivityScoped
-  public abstract static class ActivityC implements MainActivity_GeneratedInjector,
+  public abstract static class ActivityC implements MainActivityWithNavigationFragment_GeneratedInjector,
+      MainActivity_GeneratedInjector,
       ActivityComponent,
       DefaultViewModelFactories.ActivityEntryPoint,
       HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint,
@@ -216,7 +218,8 @@ public final class App_HiltComponents {
       }
   )
   @FragmentScoped
-  public abstract static class FragmentC implements FragmentComponent,
+  public abstract static class FragmentC implements HomeFragment_GeneratedInjector,
+      FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,
       GeneratedComponent {
