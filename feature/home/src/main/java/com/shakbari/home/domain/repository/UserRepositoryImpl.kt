@@ -12,12 +12,16 @@ class UserRepositoryImpl @Inject constructor(
     private val retrofitApiHelper: HomeApiHelper
 ) : UserRepository {
 
-    override suspend fun getUsers(): Flow<DataState<ArrayList<User>>> = flow{
+    override suspend fun getUsers(): ArrayList<User> = retrofitApiHelper.getUsers()
+
+
+
+/*    override suspend fun getUsers(): Flow<DataState<ArrayList<User>>> = flow{
         try {
             val response = retrofitApiHelper.getUsers()
             emit(DataState.Success(response))
         } catch (e: Exception) {
             emit(DataState.Error(e))
         }
-    }
+    }*/
 }

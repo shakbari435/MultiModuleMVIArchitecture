@@ -28,16 +28,17 @@ internal fun HomeScreen(
     navController: NavController,
     usersViewModel: UsersViewModel
 ) {
-    usersViewModel
-        .getUsers()
-        .collectAsState(initial = ViewState.Loading)
-        .value.apply {
-            when (this) {
-                is ViewState.Loading -> LoadingView()
-                is ViewState.Success -> LoadHomeScreenView(navController, data)
-                is ViewState.Empty, is ViewState.Error -> ErrorView()
-            }
-        }
+    val state = usersViewModel.userState.value
+
+    if (state.isLoading) {
+        LoadingView()
+    } else if (state.users.isNotEmpty()) {
+        LoadHomeScreenView(navController = navController, users = state.users as ArrayList<User>)
+    } else if (state.isError || state.isEmpty) {
+        ErrorView()
+    }
+
+
 }
 
 @ExperimentalCoilApi
@@ -55,7 +56,7 @@ fun LoadHomeScreenView(navController: NavController, users: ArrayList<User>) {
             )
         },
     ) {
-        LazyColumn(modifier = Modifier.background(Color.DarkGray)){
+        LazyColumn(modifier = Modifier.background(Color.DarkGray)) {
             items(users) { user ->
                 Card(
                     modifier = Modifier

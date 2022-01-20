@@ -5,5 +5,5 @@ import com.shakbari.home.domain.entity.User
 import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
-    suspend fun getUsers() : Flow<DataState<ArrayList<User>>>
+    suspend fun getUsers() : ArrayList<User>
 }

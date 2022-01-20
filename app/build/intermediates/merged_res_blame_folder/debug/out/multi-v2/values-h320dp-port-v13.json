@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Multi Module Clean Architecture With Jetpack Compose\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+            "outputFile": "D:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Amin Basalam\\.gradle\\caches\\transforms-3\\e80fd203c667bdfc2f07d1e0c34c6693\\transformed\\material-1.4.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
+                    "source": "C:\\Users\\SydHosseinAkbari\\.gradle\\caches\\transforms-3\\e80fd203c667bdfc2f07d1e0c34c6693\\transformed\\material-1.4.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
