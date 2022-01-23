@@ -1,4 +1,4 @@
-# Multi Module Clean Architecture With JetPack Compose
+# Multi Module MVI Clean Architecture With JetPack Compose
 Clean Architecture for Android
 
 The above source code was created to fully understand the Clean Architecture and ViewModel or MVVM.
