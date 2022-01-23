@@ -19,6 +19,8 @@ import com.shakbari.core.uikit.compose.AvatarImageWithCoil
 import com.shakbari.core.uikit.compose.ErrorView
 import com.shakbari.core.uikit.compose.LoadingView
 import com.shakbari.home.domain.entity.User
+import com.shakbari.home.presentation.intent.UsersIntent
+import com.shakbari.home.presentation.state.UserState
 import com.shakbari.home.presentation.viewmodel.UsersViewModel
 import com.shakbari.navigation.Screen
 
@@ -28,16 +30,18 @@ internal fun HomeScreen(
     navController: NavController,
     usersViewModel: UsersViewModel
 ) {
-    val state = usersViewModel.userState.value
 
-    if (state.isLoading) {
-        LoadingView()
-    } else if (state.users.isNotEmpty()) {
-        LoadHomeScreenView(navController = navController, users = state.users as ArrayList<User>)
-    } else if (state.isError || state.isEmpty) {
-        ErrorView()
+    when (val state = usersViewModel.state.collectAsState().value) {
+        is UserState.Idle -> usersViewModel.sendIntent(UsersIntent.GetUsers)
+        is UserState.Loading -> LoadingView()
+        is UserState.Error,is UserState.Empty -> ErrorView()
+        is UserState.Users -> {
+            LoadHomeScreenView(
+                navController = navController,
+                users = state.users as ArrayList<User>
+            )
+        }
     }
-
 
 }
 

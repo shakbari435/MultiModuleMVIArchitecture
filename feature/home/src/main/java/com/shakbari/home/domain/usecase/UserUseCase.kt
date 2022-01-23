@@ -21,14 +21,4 @@ class UserUseCase @Inject constructor(private val userRepository: UserRepository
     }
 
 
-/*
-    fun getUsers(): Flow<DataState<ArrayList<User>>> = flow{
-        try {
-            val response = userRepository.getUsers()
-            emit(DataState.Success(response))
-        } catch (e: Exception) {
-            emit(DataState.Error(e))
-        }
-    }*/
-
 }

@@ -460,7 +460,7 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
     }
 
     @Override
-    public void injectMainActivity(MainActivity arg0) {
+    public void injectMainActivity(MainActivity mainActivity) {
     }
 
     @Override
