@@ -10,6 +10,7 @@ import javax.inject.Inject
 
 class UserUseCase @Inject constructor(private val userRepository: UserRepository) {
 
+
     operator fun invoke(): Flow<DataState<ArrayList<User>>> = flow {
         emit(DataState.Loading)
         try {
@@ -21,14 +22,13 @@ class UserUseCase @Inject constructor(private val userRepository: UserRepository
     }
 
 
-/*
-    fun getUsers(): Flow<DataState<ArrayList<User>>> = flow{
+    suspend fun getUsers(): Flow<DataState<ArrayList<User>>> = flow{
         try {
             val response = userRepository.getUsers()
             emit(DataState.Success(response))
         } catch (e: Exception) {
             emit(DataState.Error(e))
         }
-    }*/
+    }
 
 }

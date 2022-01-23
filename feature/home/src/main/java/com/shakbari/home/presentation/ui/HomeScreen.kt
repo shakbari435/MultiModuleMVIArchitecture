@@ -19,8 +19,10 @@ import com.shakbari.core.uikit.compose.AvatarImageWithCoil
 import com.shakbari.core.uikit.compose.ErrorView
 import com.shakbari.core.uikit.compose.LoadingView
 import com.shakbari.home.domain.entity.User
+import com.shakbari.home.presentation.state.UserListState
 import com.shakbari.home.presentation.viewmodel.UsersViewModel
 import com.shakbari.navigation.Screen
+import kotlinx.coroutines.flow.collectLatest
 
 @ExperimentalCoilApi
 @Composable
@@ -28,7 +30,13 @@ internal fun HomeScreen(
     navController: NavController,
     usersViewModel: UsersViewModel
 ) {
-    val state = usersViewModel.userState.value
+   // val state = usersViewModel.userState.value
+
+
+    val state = usersViewModel.userState3
+        .collectAsState(initial = UserListState(isLoading = true)).value
+
+
 
     if (state.isLoading) {
         LoadingView()
