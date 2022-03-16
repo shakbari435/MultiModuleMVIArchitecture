@@ -89,8 +89,8 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _dagger_hilt_android_internal_modules_ApplicationContextModule.class,
         _dagger_hilt_android_internal_modules_HiltWrapper_ActivityModule.class,
         hilt_aggregated_deps._com_shakbari_compose_App.class,
-        _com_shakbari_compose_MainActivity_GeneratedInjector.class,
-        _com_shakbari_compose_App_GeneratedInjector.class
+        _com_shakbari_compose_App_GeneratedInjector.class,
+        _com_shakbari_compose_MainActivity_GeneratedInjector.class
     }
 )
 class App_ComponentTreeDeps {
