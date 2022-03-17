@@ -34,7 +34,6 @@ internal fun HomeScreen(
     usersViewModel: UsersViewModel
 ) {
     val context = LocalContext.current
-    val users = usersViewModel.users.collectAsLazyPagingItems()
 
     when (val state = usersViewModel.state.collectAsState().value) {
         is UserState.Idle -> {
@@ -44,7 +43,8 @@ internal fun HomeScreen(
         is UserState.Loading -> LoadingView()
         is UserState.Error,is UserState.Empty -> ErrorView()
         is UserState.Users ->{
-                LoadHomeScreenView(
+            val users = state.users.collectAsLazyPagingItems()
+            LoadHomeScreenView(
                     navController = navController,
                     users = users)
         }

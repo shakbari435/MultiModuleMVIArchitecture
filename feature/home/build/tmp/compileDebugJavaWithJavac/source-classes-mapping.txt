@@ -4,8 +4,8 @@ com/shakbari/home/common/di/HomeFeatureModule_ProvideApiServiceFactory.java
  com.shakbari.home.common.di.HomeFeatureModule_ProvideApiServiceFactory
 com/shakbari/home/BuildConfig.java
  com.shakbari.home.BuildConfig
-com/shakbari/home/common/UserSource_Factory.java
- com.shakbari.home.common.UserSource_Factory
+com/shakbari/home/domain/usecase/UserUseCase_Factory.java
+ com.shakbari.home.domain.usecase.UserUseCase_Factory
 com/shakbari/home/common/api/HomeApiHelperImpl_Factory.java
  com.shakbari.home.common.api.HomeApiHelperImpl_Factory
 com/shakbari/home/common/di/HomeFeatureModule_ProvideApiHelperFactory.java
@@ -21,8 +21,8 @@ com/shakbari/home/common/di/HomeFeatureModule_ProvideUserRepositoryFactory.java
 com/shakbari/home/presentation/viewmodel/UsersViewModel_HiltModules_KeyModule_ProvideFactory.java
  com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules_KeyModule_ProvideFactory
  com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-com/shakbari/home/domain/usecase/UserUseCase_Factory.java
- com.shakbari.home.domain.usecase.UserUseCase_Factory
+com/shakbari/home/presentation/pagination/UserSource_Factory.java
+ com.shakbari.home.presentation.pagination.UserSource_Factory
 com/shakbari/home/presentation/viewmodel/UsersViewModel_Factory.java
  com.shakbari.home.presentation.viewmodel.UsersViewModel_Factory
 com/shakbari/home/presentation/viewmodel/UsersViewModel_HiltModules.java

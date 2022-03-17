@@ -12,7 +12,6 @@ import com.shakbari.core.di.RetrofitModule_ProvideOkHttpClientFactory;
 import com.shakbari.core.di.RetrofitModule_ProvideRetrofitFactory;
 import com.shakbari.core.di.RetrofitModule_ProvideUtilsFactory;
 import com.shakbari.core.di.utils.RetrofitConfig;
-import com.shakbari.home.presentation.pagination.UserSource;
 import com.shakbari.home.common.api.HomeApiHelper;
 import com.shakbari.home.common.api.HomeApiHelperImpl;
 import com.shakbari.home.common.api.HomeRetrofitApiService;
@@ -23,6 +22,7 @@ import com.shakbari.home.common.di.HomeFeatureModule_ProvideUserRepositoryFactor
 import com.shakbari.home.domain.repository.UserRepository;
 import com.shakbari.home.domain.repository.UserRepositoryImpl;
 import com.shakbari.home.domain.usecase.UserUseCase;
+import com.shakbari.home.presentation.pagination.UserSource;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules_KeyModule_ProvideFactory;
 import dagger.hilt.android.ActivityRetainedLifecycle;

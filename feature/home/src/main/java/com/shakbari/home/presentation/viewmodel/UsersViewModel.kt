@@ -22,8 +22,6 @@ class UsersViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
-    val users : MutableStateFlow<PagingData<User>>
-        get() = _users
 
 
     private val userIntent = Channel<UsersIntent>(Channel.UNLIMITED)
@@ -72,11 +70,15 @@ class UsersViewModel @Inject constructor(
     }*/
 
 
-    private fun getUsers() {
-        getUserSource().flow.onEach {
-            _users.value = it
-            updateState(UserState.Users)
-        }.launchIn(viewModelScope)
+    suspend fun getUsers() {
+        viewModelScope.launch {
+            getUserSource().flow.cachedIn(viewModelScope).catch {
+                updateState(UserState.Error(""))
+            }.collect {
+                _users.value = it
+                updateState(UserState.Users(_users))
+            }
+        }
     }
 
     private fun getUserSource(): Pager<Int, User> {
