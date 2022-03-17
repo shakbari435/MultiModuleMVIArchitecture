@@ -1,4 +1,4 @@
-package com.shakbari.home.common
+package com.shakbari.home.presentation.pagination
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

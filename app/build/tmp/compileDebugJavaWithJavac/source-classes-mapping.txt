@@ -19,6 +19,8 @@ dagger/hilt/internal/processedrootsentinel/codegen/_com_shakbari_compose_App.jav
 com/shakbari/compose/Hilt_MainActivity.java
  com.shakbari.compose.Hilt_MainActivity
  com.shakbari.compose.Hilt_MainActivity$1
+com/shakbari/compose/App_ComponentTreeDeps.java
+ com.shakbari.compose.App_ComponentTreeDeps
 com/shakbari/compose/DaggerApp_HiltComponents_SingletonC.java
  com.shakbari.compose.DaggerApp_HiltComponents_SingletonC
  com.shakbari.compose.DaggerApp_HiltComponents_SingletonC$1
@@ -40,8 +42,6 @@ com/shakbari/compose/DaggerApp_HiltComponents_SingletonC.java
  com.shakbari.compose.DaggerApp_HiltComponents_SingletonC$ViewModelCImpl$SwitchingProvider
  com.shakbari.compose.DaggerApp_HiltComponents_SingletonC$ViewWithFragmentCBuilder
  com.shakbari.compose.DaggerApp_HiltComponents_SingletonC$ViewWithFragmentCImpl
-com/shakbari/compose/App_ComponentTreeDeps.java
- com.shakbari.compose.App_ComponentTreeDeps
 com/shakbari/compose/App_GeneratedInjector.java
  com.shakbari.compose.App_GeneratedInjector
 com/shakbari/compose/Hilt_App.java
