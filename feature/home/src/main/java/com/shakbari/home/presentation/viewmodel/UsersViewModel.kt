@@ -3,7 +3,9 @@ package com.shakbari.home.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.shakbari.core.base.DataState
+import androidx.paging.*
+import com.shakbari.home.presentation.pagination.UserSource
+import com.shakbari.home.domain.entity.User
 import com.shakbari.home.domain.usecase.UserUseCase
 import com.shakbari.home.presentation.intent.UsersIntent
 import com.shakbari.home.presentation.state.UserState
@@ -15,15 +17,21 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UsersViewModel @Inject constructor(
-    private val userUseCase: UserUseCase
+    private val userUseCase: UserUseCase,
+    private val userSource: UserSource
 ) : ViewModel() {
+
+    private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
+    val users : MutableStateFlow<PagingData<User>>
+        get() = _users
+
 
     private val userIntent = Channel<UsersIntent>(Channel.UNLIMITED)
     private val _state = MutableStateFlow<UserState>(UserState.Idle)
     val state: StateFlow<UserState>
         get() = _state
 
-    private fun updateState(userState: UserState) {
+    fun updateState(userState: UserState) {
         _state.value = userState
     }
 
@@ -48,7 +56,7 @@ class UsersViewModel @Inject constructor(
         }
     }
 
-    private fun getUsers() {
+/*    private fun getUsers() {
         userUseCase().onEach {
             when (it) {
                 is DataState.Error -> updateState(UserState.Error("${it.exception.message}"))
@@ -61,7 +69,19 @@ class UsersViewModel @Inject constructor(
                 }
             }
         }.launchIn(viewModelScope)
+    }*/
+
+
+    private fun getUsers() {
+        getUserSource().flow.onEach {
+            _users.value = it
+            updateState(UserState.Users)
+        }.launchIn(viewModelScope)
     }
 
-
+    private fun getUserSource(): Pager<Int, User> {
+        return Pager(PagingConfig(5)) {
+            userSource
+        }
+    }
 }

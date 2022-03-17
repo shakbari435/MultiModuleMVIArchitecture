@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml:2:1-5:12
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml:2:1-5:12
+ADDED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml:2:1-5:12
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml:3:5-32
-		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
+		ADDED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+		INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-		ADDED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
+		INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+		ADDED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+		INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-		ADDED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
-		INJECTED from E:\Android\Compose\WorkSpace\MultiModule\core\src\main\AndroidManifest.xml
+		INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+		ADDED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml
+		INJECTED from D:\(3)Android\bslm\WorkSpace\MultiModuleClean\core\src\main\AndroidManifest.xml

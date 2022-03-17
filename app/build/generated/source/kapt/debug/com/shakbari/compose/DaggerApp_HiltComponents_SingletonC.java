@@ -12,6 +12,7 @@ import com.shakbari.core.di.RetrofitModule_ProvideOkHttpClientFactory;
 import com.shakbari.core.di.RetrofitModule_ProvideRetrofitFactory;
 import com.shakbari.core.di.RetrofitModule_ProvideUtilsFactory;
 import com.shakbari.core.di.utils.RetrofitConfig;
+import com.shakbari.home.presentation.pagination.UserSource;
 import com.shakbari.home.common.api.HomeApiHelper;
 import com.shakbari.home.common.api.HomeApiHelperImpl;
 import com.shakbari.home.common.api.HomeRetrofitApiService;
@@ -460,7 +461,7 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
     }
 
     @Override
-    public void injectMainActivity(MainActivity mainActivity) {
+    public void injectMainActivity(MainActivity arg0) {
     }
 
     @Override
@@ -511,8 +512,12 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
       return new UserUseCase(singletonC.provideUserRepositoryProvider.get());
     }
 
+    private UserSource userSource() {
+      return new UserSource(singletonC.provideUserRepositoryProvider.get());
+    }
+
     private UsersViewModel usersViewModel() {
-      return new UsersViewModel(userUseCase());
+      return new UsersViewModel(userUseCase(), userSource());
     }
 
     @SuppressWarnings("unchecked")
