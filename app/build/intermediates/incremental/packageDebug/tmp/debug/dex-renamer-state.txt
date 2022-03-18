@@ -1,4 +1,4 @@
-#Thu Mar 17 17:50:36 IRST 2022
+#Fri Mar 18 21:48:03 IRST 2022
 path.4=13/classes.dex
 path.3=12/classes.dex
 path.2=11/classes.dex
@@ -19,6 +19,7 @@ base.8=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermedi
 base.7=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\1\\classes.dex
 base.6=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\15\\classes.dex
 base.5=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\14\\classes.dex
+renamed.20=classes21.dex
 renamed.18=classes19.dex
 renamed.17=classes18.dex
 renamed.9=classes10.dex
@@ -38,6 +39,7 @@ base.15=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermed
 base.14=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\9\\classes.dex
 base.19=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.18=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.20=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\5\\classes.dex
 renamed.3=classes4.dex
 path.12=7/classes.dex
 renamed.2=classes3.dex
@@ -57,5 +59,6 @@ path.15=0/classes.dex
 renamed.19=classes20.dex
 base.13=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\8\\classes.dex
 base.12=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\7\\classes.dex
+path.20=5/classes.dex
 base.11=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\6\\classes.dex
 base.10=D\:\\(3)Android\\bslm\\WorkSpace\\MultiModuleClean\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\4\\classes.dex

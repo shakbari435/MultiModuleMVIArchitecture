@@ -10,7 +10,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.paging.LoadState
@@ -22,8 +21,7 @@ import com.shakbari.core.uikit.compose.AvatarImageWithCoil
 import com.shakbari.core.uikit.compose.ErrorView
 import com.shakbari.core.uikit.compose.LoadingView
 import com.shakbari.home.domain.entity.User
-import com.shakbari.home.presentation.intent.UsersIntent
-import com.shakbari.home.presentation.state.UserState
+import com.shakbari.home.presentation.contract.HomeContract
 import com.shakbari.home.presentation.viewmodel.UsersViewModel
 import com.shakbari.navigation.Screen
 
@@ -31,27 +29,59 @@ import com.shakbari.navigation.Screen
 @Composable
 internal fun HomeScreen(
     navController: NavController,
-    usersViewModel: UsersViewModel
+    usersViewModel: UsersViewModel,
 ) {
-    val context = LocalContext.current
 
-    when (val state = usersViewModel.state.collectAsState().value) {
-        is UserState.Idle -> {
-            LoadingView()
-            usersViewModel.sendIntent(UsersIntent.GetUsers)
+    when (val screenState = usersViewModel.uiState.collectAsState().value) {
+        is HomeContract.ScreenState.Idle -> {
+            usersViewModel.setIntent(HomeContract.Intent.GetUsersWithPaging)
         }
-        is UserState.Loading -> LoadingView()
-        is UserState.Error,is UserState.Empty -> ErrorView()
-        is UserState.Users ->{
-            val users = state.users.collectAsLazyPagingItems()
-            LoadHomeScreenView(
-                    navController = navController,
-                    users = users)
+        is HomeContract.ScreenState.Loading -> LoadingView()
+        is HomeContract.ScreenState.SideEffect -> {
+            SideEffectHandler(screenState.effect)
+        }
+        is HomeContract.ScreenState.Users -> {
+            UsersStateHandler(
+                userState = screenState.userState,
+                navController = navController
+            )
         }
     }
 
+}
+
+@Composable
+fun SideEffectHandler(effectState: HomeContract.Effect) {
+    when (effectState) {
+        is HomeContract.Effect.ShowError -> {
+            ErrorView()
+        }
+    }
+}
 
 
+@OptIn(ExperimentalCoilApi::class)
+@Composable
+fun UsersStateHandler(userState: HomeContract.UsersState, navController: NavController) {
+    when (userState) {
+        is HomeContract.UsersState.Loading -> LoadingView()
+        is HomeContract.UsersState.Error,
+        is HomeContract.UsersState.Empty -> ErrorView()
+        is HomeContract.UsersState.Success -> {
+            val users = userState.users
+            LoadHomeScreenView2(
+                navController = navController,
+                users = users
+            )
+        }
+        is HomeContract.UsersState.SuccessPaging -> {
+            val users = userState.users.collectAsLazyPagingItems()
+            LoadHomeScreenView(
+                navController = navController,
+                users = users
+            )
+        }
+    }
 }
 
 @ExperimentalCoilApi
@@ -89,6 +119,30 @@ fun LoadHomeScreenView(navController: NavController, users: LazyPagingItems<User
 
                     }
                 }
+            }
+        }
+    }
+}
+
+
+@ExperimentalCoilApi
+@Composable
+fun LoadHomeScreenView2(navController: NavController, users: ArrayList<User>) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row {
+                        Text(text = "Created by")
+                        Text(text = " s.h.akbari435@gmail")
+                    }
+                }
+            )
+        },
+    ) {
+        LazyColumn(modifier = Modifier.background(Color.DarkGray)) {
+            items(users) { user ->
+                UserCardView(navController = navController, user = user!!)
             }
         }
     }

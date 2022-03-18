@@ -1,4 +1,4 @@
-package com.shakbari.core.base
+package com.shakbari.core.extention
 
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.*
