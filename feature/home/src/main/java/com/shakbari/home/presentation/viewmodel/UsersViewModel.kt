@@ -23,7 +23,7 @@ class UsersViewModel @Inject constructor(
     private val userSource: UserSource
 ) : BaseViewModel<HomeContract.Intent, HomeContract.ScreenState/*, HomeContract.Effect*/>() {
 
-    private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
+    //private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
 
 
     override fun createInitialState(): HomeContract.ScreenState {
@@ -76,10 +76,10 @@ class UsersViewModel @Inject constructor(
                     )
                 }
             }.collect {
-                _users.value = it
+                //_users.value = it
                 setState {
                     HomeContract.ScreenState.Users(
-                        HomeContract.UsersState.SuccessPaging(_users)
+                        HomeContract.UsersState.SuccessPaging(MutableStateFlow(it))
                     )
                 }
             }
