@@ -1,7 +1,6 @@
 package com.shakbari.home.presentation.contract
 
 import androidx.paging.PagingData
-import com.shakbari.core.base.mvi.UiEffect
 import com.shakbari.core.base.mvi.UiIntent
 import com.shakbari.core.base.mvi.UiState
 import com.shakbari.home.domain.entity.User
@@ -17,7 +16,7 @@ class HomeContract {
         object Idle : ScreenState()
         object Loading : ScreenState()
         data class Users(val userState: UsersState) : ScreenState()
-        data class SideEffect(val effect: Effect) : ScreenState()
+        data class SideEffect(val sideEffect: HomeContract.SideEffect) : ScreenState()
     }
 
 
@@ -30,7 +29,7 @@ class HomeContract {
     }
 
 
-    sealed class Effect : UiEffect {
-        data class ShowError(val message : String?) : Effect()
+    sealed class SideEffect  {
+        data class ShowError(val message : String?) : SideEffect()
     }
 }

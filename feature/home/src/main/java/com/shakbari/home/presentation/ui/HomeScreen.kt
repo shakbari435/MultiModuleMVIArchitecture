@@ -34,11 +34,15 @@ internal fun HomeScreen(
 
     when (val screenState = usersViewModel.uiState.collectAsState().value) {
         is HomeContract.ScreenState.Idle -> {
-            usersViewModel.setIntent(HomeContract.Intent.GetUsersWithPaging)
+            usersViewModel.setIntent(
+                intent = HomeContract.Intent.GetUsersWithPaging
+            )
         }
         is HomeContract.ScreenState.Loading -> LoadingView()
         is HomeContract.ScreenState.SideEffect -> {
-            SideEffectHandler(screenState.effect)
+            SideEffectHandler(
+                effectState = screenState.sideEffect
+            )
         }
         is HomeContract.ScreenState.Users -> {
             UsersStateHandler(
@@ -51,9 +55,9 @@ internal fun HomeScreen(
 }
 
 @Composable
-fun SideEffectHandler(effectState: HomeContract.Effect) {
+fun SideEffectHandler(effectState: HomeContract.SideEffect) {
     when (effectState) {
-        is HomeContract.Effect.ShowError -> {
+        is HomeContract.SideEffect.ShowError -> {
             ErrorView()
         }
     }

@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 /**
  * Base class for [ViewModel] instances
  */
-abstract class BaseViewModel<Intent : UiIntent, State : UiState, Effect : UiEffect> : ViewModel() {
+abstract class BaseViewModel<Intent : UiIntent, State : UiState, /*Effect : UiEffect*/> : ViewModel() {
 
     private val initialState : State by lazy { createInitialState() }
     abstract fun createInitialState() : State
@@ -22,8 +22,8 @@ abstract class BaseViewModel<Intent : UiIntent, State : UiState, Effect : UiEffe
     private val _intent : MutableSharedFlow<Intent> = MutableSharedFlow()
     val intent = _intent.asSharedFlow()
 
-    private val _effect : Channel<Effect> = Channel()
-    val effect = _effect.receiveAsFlow()
+/*    private val _effect : Channel<Effect> = Channel()
+    val effect = _effect.receiveAsFlow()*/
 
 
     init {
@@ -67,8 +67,8 @@ abstract class BaseViewModel<Intent : UiIntent, State : UiState, Effect : UiEffe
     /**
      * Set new Effect
      */
-    protected fun setEffect(builder: () -> Effect) {
+/*    protected fun setEffect(builder: () -> Effect) {
         val effectValue = builder()
         viewModelScope.launch { _effect.send(effectValue) }
-    }
+    }*/
 }

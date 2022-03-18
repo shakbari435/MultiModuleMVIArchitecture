@@ -21,7 +21,7 @@ import javax.inject.Inject
 class UsersViewModel @Inject constructor(
     private val userUseCase: UserUseCase,
     private val userSource: UserSource
-) : BaseViewModel<HomeContract.Intent, HomeContract.ScreenState, HomeContract.Effect>() {
+) : BaseViewModel<HomeContract.Intent, HomeContract.ScreenState/*, HomeContract.Effect*/>() {
 
     private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
 
@@ -42,7 +42,7 @@ class UsersViewModel @Inject constructor(
             when (it) {
                 is DataState.Error -> setState {
                     HomeContract.ScreenState.SideEffect(
-                        HomeContract.Effect.ShowError("")
+                        HomeContract.SideEffect.ShowError("")
                     )
                 }
                 is DataState.Loading -> setState {
@@ -72,7 +72,7 @@ class UsersViewModel @Inject constructor(
             getUserSource().flow.cachedIn(viewModelScope).catch {
                 setState {
                     HomeContract.ScreenState.SideEffect(
-                        HomeContract.Effect.ShowError("")
+                        HomeContract.SideEffect.ShowError("")
                     )
                 }
             }.collect {
