@@ -4,18 +4,19 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.Card
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.paging.LoadState
-import androidx.paging.compose.LazyPagingItems
-import androidx.paging.compose.collectAsLazyPagingItems
-import androidx.paging.compose.items
 import coil.annotation.ExperimentalCoilApi
 import com.shakbari.core.uikit.compose.AvatarImageWithCoil
 import com.shakbari.core.uikit.compose.ErrorView
@@ -27,6 +28,7 @@ import com.shakbari.navigation.Screen
 
 @ExperimentalCoilApi
 @Composable
+
 internal fun HomeScreen(
     navController: NavController,
     usersViewModel: UsersViewModel,
@@ -35,7 +37,7 @@ internal fun HomeScreen(
     when (val screenState = usersViewModel.uiState.collectAsState().value) {
         is HomeContract.ScreenState.Idle -> {
             usersViewModel.setIntent(
-                intent = HomeContract.Intent.GetUsersWithPaging
+                intent = HomeContract.Intent.GetUsers
             )
         }
         is HomeContract.ScreenState.Loading -> LoadingView()
@@ -47,7 +49,8 @@ internal fun HomeScreen(
         is HomeContract.ScreenState.Users -> {
             UsersStateHandler(
                 userState = screenState.userState,
-                navController = navController
+                navController = navController,
+                usersViewModel
             )
         }
     }
@@ -66,28 +69,29 @@ fun SideEffectHandler(effectState: HomeContract.SideEffect) {
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
-fun UsersStateHandler(userState: HomeContract.UsersState, navController: NavController) {
+fun UsersStateHandler(userState: HomeContract.UsersState, navController: NavController,usersViewModel: UsersViewModel) {
     when (userState) {
         is HomeContract.UsersState.Loading -> LoadingView()
         is HomeContract.UsersState.Error,
         is HomeContract.UsersState.Empty -> ErrorView()
         is HomeContract.UsersState.Success -> {
-            val users = userState.users
+            val users = userState.users.collectAsState()
             LoadHomeScreenView2(
                 navController = navController,
-                users = users
+                users = users.value,
+                usersViewModel = usersViewModel
             )
         }
-        is HomeContract.UsersState.SuccessPaging -> {
+/*        is HomeContract.UsersState.SuccessPaging -> {
             val users = userState.users.collectAsLazyPagingItems()
             LoadHomeScreenView(
                 navController = navController,
                 users = users
             )
-        }
+        }*/
     }
 }
-
+/*
 @ExperimentalCoilApi
 @Composable
 fun LoadHomeScreenView(navController: NavController, users: LazyPagingItems<User>) {
@@ -126,12 +130,16 @@ fun LoadHomeScreenView(navController: NavController, users: LazyPagingItems<User
             }
         }
     }
-}
+}*/
 
 
 @ExperimentalCoilApi
 @Composable
-fun LoadHomeScreenView2(navController: NavController, users: ArrayList<User>) {
+fun LoadHomeScreenView2(
+    navController: NavController,
+    users: MutableList<User>,
+    usersViewModel: UsersViewModel
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -145,13 +153,24 @@ fun LoadHomeScreenView2(navController: NavController, users: ArrayList<User>) {
         },
     ) {
         LazyColumn(modifier = Modifier.background(Color.DarkGray)) {
-            items(users) { user ->
-                UserCardView(navController = navController, user = user!!)
+            val threshold = 3
+            val lastIndex = users.lastIndex
+            itemsIndexed(users) { index ,user ->
+                UserCardView(navController = navController, user = user)
+                if (index + threshold >= lastIndex && !usersViewModel.isLoadMoreLoading.value) {
+                    SideEffect {
+                        usersViewModel.setIntent(HomeContract.Intent.GetUsersWithPaging)
+                    }
+                }
+            }
+            if(usersViewModel.isLoadMoreLoading.value){
+                item { LoadingView() }
             }
         }
     }
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun UserCardView(
     navController: NavController,
@@ -162,7 +181,7 @@ fun UserCardView(
             .padding(5.dp)
             .fillMaxWidth()
             .clickable {
-                navController.navigate(Screen.Detail.withArgs(user!!.name))
+                navController.navigate(Screen.Detail.withArgs(user.name))
             },
     ) {
         Row(
@@ -176,9 +195,9 @@ fun UserCardView(
                 modifier = Modifier.padding(10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = user!!.name)
+                Text(text = user.name)
                 Spacer(modifier = Modifier.padding(6.dp))
-                Text(text = user!!.email)
+                Text(text = user.email)
             }
         }
     }

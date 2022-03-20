@@ -2,7 +2,6 @@
 package com.shakbari.home.presentation.viewmodel;
 
 import com.shakbari.home.domain.usecase.UserUseCase;
-import com.shakbari.home.presentation.pagination.UserSource;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import javax.inject.Provider;
@@ -15,25 +14,20 @@ import javax.inject.Provider;
 public final class UsersViewModel_Factory implements Factory<UsersViewModel> {
   private final Provider<UserUseCase> userUseCaseProvider;
 
-  private final Provider<UserSource> userSourceProvider;
-
-  public UsersViewModel_Factory(Provider<UserUseCase> userUseCaseProvider,
-      Provider<UserSource> userSourceProvider) {
+  public UsersViewModel_Factory(Provider<UserUseCase> userUseCaseProvider) {
     this.userUseCaseProvider = userUseCaseProvider;
-    this.userSourceProvider = userSourceProvider;
   }
 
   @Override
   public UsersViewModel get() {
-    return newInstance(userUseCaseProvider.get(), userSourceProvider.get());
+    return newInstance(userUseCaseProvider.get());
   }
 
-  public static UsersViewModel_Factory create(Provider<UserUseCase> userUseCaseProvider,
-      Provider<UserSource> userSourceProvider) {
-    return new UsersViewModel_Factory(userUseCaseProvider, userSourceProvider);
+  public static UsersViewModel_Factory create(Provider<UserUseCase> userUseCaseProvider) {
+    return new UsersViewModel_Factory(userUseCaseProvider);
   }
 
-  public static UsersViewModel newInstance(UserUseCase userUseCase, UserSource userSource) {
-    return new UsersViewModel(userUseCase, userSource);
+  public static UsersViewModel newInstance(UserUseCase userUseCase) {
+    return new UsersViewModel(userUseCase);
   }
 }

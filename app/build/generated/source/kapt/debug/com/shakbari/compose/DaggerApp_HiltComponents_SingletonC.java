@@ -22,7 +22,6 @@ import com.shakbari.home.common.di.HomeFeatureModule_ProvideUserRepositoryFactor
 import com.shakbari.home.domain.repository.UserRepository;
 import com.shakbari.home.domain.repository.UserRepositoryImpl;
 import com.shakbari.home.domain.usecase.UserUseCase;
-import com.shakbari.home.presentation.pagination.UserSource;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel;
 import com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules_KeyModule_ProvideFactory;
 import dagger.hilt.android.ActivityRetainedLifecycle;
@@ -512,12 +511,8 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
       return new UserUseCase(singletonC.provideUserRepositoryProvider.get());
     }
 
-    private UserSource userSource() {
-      return new UserSource(singletonC.provideUserRepositoryProvider.get());
-    }
-
     private UsersViewModel usersViewModel() {
-      return new UsersViewModel(userUseCase(), userSource());
+      return new UsersViewModel(userUseCase());
     }
 
     @SuppressWarnings("unchecked")

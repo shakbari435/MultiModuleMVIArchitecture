@@ -1,11 +1,8 @@
 package com.shakbari.home.presentation.viewmodel
 
 
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import com.shakbari.core.base.mvi.BaseViewModel
 import com.shakbari.core.base.DataState
 import com.shakbari.home.domain.entity.User
@@ -14,17 +11,17 @@ import com.shakbari.home.presentation.contract.HomeContract
 import com.shakbari.home.presentation.pagination.UserSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class UsersViewModel @Inject constructor(
     private val userUseCase: UserUseCase,
-    private val userSource: UserSource
+   // private val userSource: UserSource
 ) : BaseViewModel<HomeContract.Intent, HomeContract.ScreenState/*, HomeContract.Effect*/>() {
 
     //private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
-
+    private val _users = MutableStateFlow<MutableList<User>>(ArrayList())
+    var isLoadMoreLoading = mutableStateOf(false)
 
     override fun createInitialState(): HomeContract.ScreenState {
         return HomeContract.ScreenState.Idle
@@ -51,10 +48,13 @@ class UsersViewModel @Inject constructor(
                     )
                 }
                 is DataState.Success -> {
-                    if (!it.data.isNullOrEmpty()) setState {
-                        HomeContract.ScreenState.Users(
-                            HomeContract.UsersState.Success(it.data)
-                        )
+                    if (!it.data.isNullOrEmpty()) {
+                        _users.value.addAll(it.data)
+                        setState {
+                            HomeContract.ScreenState.Users(
+                                HomeContract.UsersState.Success(_users)
+                            )
+                        }
                     }
                     else setState {
                         HomeContract.ScreenState.Users(
@@ -66,8 +66,29 @@ class UsersViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-
     private fun getUsersWithPaging() {
+        isLoadMoreLoading.value = true
+        userUseCase().onEach {
+            when (it) {
+                is DataState.Success -> {
+                    if (!it.data.isNullOrEmpty()) {
+                        _users.value.addAll(it.data)
+                        isLoadMoreLoading.
+                        value = false
+                        setState {
+                            HomeContract.ScreenState.Users(
+                                HomeContract.UsersState.Success(_users)
+                            )
+                        }
+                    }
+                }
+                else -> {}
+            }
+        }.launchIn(viewModelScope)
+    }
+
+
+ /*   private fun getUsersWithPaging() {
         viewModelScope.launch {
             getUserSource().flow.cachedIn(viewModelScope).catch {
                 setState {
@@ -90,7 +111,7 @@ class UsersViewModel @Inject constructor(
         return Pager(PagingConfig(1)) {
             userSource
         }
-    }
+    }*/
 
 
 }

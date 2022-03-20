@@ -22,8 +22,8 @@ class HomeContract {
 
     sealed class UsersState {
         object Loading : UsersState()
-        data class Success(val users : ArrayList<User>) : UsersState()
-        data class SuccessPaging(val users: MutableStateFlow<PagingData<User>>) : UsersState()
+        data class Success(val users : MutableStateFlow<MutableList<User>>) : UsersState()
+        //data class SuccessPaging(val users: MutableStateFlow<PagingData<User>>) : UsersState()
         data class Error(val errorMessage: String?) : UsersState()
         data class Empty(val emptyMessage: String?) : UsersState()
     }
