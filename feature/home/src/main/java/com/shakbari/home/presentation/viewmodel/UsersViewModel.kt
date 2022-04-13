@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class UsersViewModel @Inject constructor(
     private val userUseCase: UserUseCase,
-   // private val userSource: UserSource
+    // private val userSource: UserSource
 ) : BaseViewModel<HomeContract.Intent, HomeContract.ScreenState/*, HomeContract.Effect*/>() {
 
     //private val _users = MutableStateFlow<PagingData<User>>(PagingData.empty())
@@ -30,88 +30,83 @@ class UsersViewModel @Inject constructor(
     override fun handleIntent(intent: HomeContract.Intent) {
         when (intent) {
             is HomeContract.Intent.GetUsers -> getUsers()
-            is HomeContract.Intent.GetUsersWithPaging -> getUsersWithPaging()
         }
     }
 
     private fun getUsers() {
+        if (_users.value.isNotEmpty()) {
+            isLoadMoreLoading.value = true
+        }
         userUseCase().onEach {
             when (it) {
-                is DataState.Error -> setState {
-                    HomeContract.ScreenState.SideEffect(
-                        HomeContract.SideEffect.ShowError("")
-                    )
+                is DataState.Error -> {
+                    if (_users.value.isEmpty()) {
+                        setState {
+                            HomeContract.ScreenState.SideEffect(
+                                HomeContract.SideEffect.ShowError("")
+                            )
+                        }
+                    }
                 }
-                is DataState.Loading -> setState {
-                    HomeContract.ScreenState.Users(
-                        HomeContract.UsersState.Loading
-                    )
+
+                is DataState.Loading -> {
+                    if (_users.value.isEmpty()) {
+                        setState {
+                            HomeContract.ScreenState.Users(
+                                HomeContract.UsersState.Loading
+                            )
+                        }
+                    }
                 }
                 is DataState.Success -> {
                     if (!it.data.isNullOrEmpty()) {
                         _users.value.addAll(it.data)
+                        isLoadMoreLoading.value = false
                         setState {
                             HomeContract.ScreenState.Users(
                                 HomeContract.UsersState.Success(_users)
                             )
                         }
-                    }
-                    else setState {
-                        HomeContract.ScreenState.Users(
-                            HomeContract.UsersState.Empty("Ops...List is Empty")
-                        )
+                    } else {
+                        if (_users.value.isEmpty()) {
+                            setState {
+                                HomeContract.ScreenState.Users(
+                                    HomeContract.UsersState.Empty("Ops...List is Empty")
+                                )
+                            }
+                        }
                     }
                 }
             }
         }.launchIn(viewModelScope)
     }
 
-    private fun getUsersWithPaging() {
-        isLoadMoreLoading.value = true
-        userUseCase().onEach {
-            when (it) {
-                is DataState.Success -> {
-                    if (!it.data.isNullOrEmpty()) {
-                        _users.value.addAll(it.data)
-                        isLoadMoreLoading.
-                        value = false
-                        setState {
-                            HomeContract.ScreenState.Users(
-                                HomeContract.UsersState.Success(_users)
-                            )
-                        }
-                    }
-                }
-                else -> {}
-            }
-        }.launchIn(viewModelScope)
-    }
 
 
- /*   private fun getUsersWithPaging() {
-        viewModelScope.launch {
-            getUserSource().flow.cachedIn(viewModelScope).catch {
-                setState {
-                    HomeContract.ScreenState.SideEffect(
-                        HomeContract.SideEffect.ShowError("")
-                    )
-                }
-            }.collect {
-                //_users.value = it
-                setState {
-                    HomeContract.ScreenState.Users(
-                        HomeContract.UsersState.SuccessPaging(MutableStateFlow(it))
-                    )
-                }
-            }
-        }
-    }
+    /*   private fun getUsersWithPaging() {
+           viewModelScope.launch {
+               getUserSource().flow.cachedIn(viewModelScope).catch {
+                   setState {
+                       HomeContract.ScreenState.SideEffect(
+                           HomeContract.SideEffect.ShowError("")
+                       )
+                   }
+               }.collect {
+                   //_users.value = it
+                   setState {
+                       HomeContract.ScreenState.Users(
+                           HomeContract.UsersState.SuccessPaging(MutableStateFlow(it))
+                       )
+                   }
+               }
+           }
+       }
 
-    private fun getUserSource(): Pager<Int, User> {
-        return Pager(PagingConfig(1)) {
-            userSource
-        }
-    }*/
+       private fun getUserSource(): Pager<Int, User> {
+           return Pager(PagingConfig(1)) {
+               userSource
+           }
+       }*/
 
 
 }

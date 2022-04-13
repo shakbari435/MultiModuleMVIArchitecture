@@ -159,7 +159,7 @@ fun LoadHomeScreenView2(
                 UserCardView(navController = navController, user = user)
                 if (index + threshold >= lastIndex && !usersViewModel.isLoadMoreLoading.value) {
                     SideEffect {
-                        usersViewModel.setIntent(HomeContract.Intent.GetUsersWithPaging)
+                        usersViewModel.setIntent(HomeContract.Intent.GetUsers)
                     }
                 }
             }

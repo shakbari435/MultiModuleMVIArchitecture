@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 class HomeContract {
     sealed class Intent : UiIntent {
         object GetUsers : Intent()
-        object GetUsersWithPaging : Intent()
     }
 
     sealed class ScreenState : UiState {

@@ -4,8 +4,6 @@ com/shakbari/home/common/di/HomeFeatureModule_ProvideApiServiceFactory.java
  com.shakbari.home.common.di.HomeFeatureModule_ProvideApiServiceFactory
 com/shakbari/home/BuildConfig.java
  com.shakbari.home.BuildConfig
-com/shakbari/home/domain/usecase/UserUseCase_Factory.java
- com.shakbari.home.domain.usecase.UserUseCase_Factory
 com/shakbari/home/common/api/HomeApiHelperImpl_Factory.java
  com.shakbari.home.common.api.HomeApiHelperImpl_Factory
 com/shakbari/home/common/di/HomeFeatureModule_ProvideApiHelperFactory.java
@@ -29,3 +27,5 @@ com/shakbari/home/presentation/viewmodel/UsersViewModel_HiltModules.java
  com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules
  com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules$BindsModule
  com.shakbari.home.presentation.viewmodel.UsersViewModel_HiltModules$KeyModule
+com/shakbari/home/domain/usecase/UserUseCase_Factory.java
+ com.shakbari.home.domain.usecase.UserUseCase_Factory
